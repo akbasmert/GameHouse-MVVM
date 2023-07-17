@@ -26,6 +26,7 @@ protocol HomeViewModelDelegate: AnyObject {
     func showLoadingView()
     func hideLoadingView()
     func reloadData()
+   
 }
 
 final class HomeViewModel: NSObject {
@@ -34,7 +35,7 @@ final class HomeViewModel: NSObject {
     
     let service: VideoGameServiceProtocol
     weak var delegate: HomeViewModelDelegate?
-    private var videoGames: [Game] = []
+    static var videoGames: [Game] = []
     private var filteredVideoGames: [Game] = []
     
     init(service: VideoGameServiceProtocol) {
@@ -53,7 +54,7 @@ final class HomeViewModel: NSObject {
             switch response {
             case .success(let gameVideos):
                 print("Mert: \(gameVideos)")
-                self.videoGames = gameVideos
+                HomeViewModel.videoGames = gameVideos
               
                 // TODO: collectionview reload data
                 // View Controllarda collectionview i güncelle.
@@ -72,11 +73,11 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     var numberOfItems: Int {
-        videoGames.count
+        HomeViewModel.videoGames.count
     }
     
     var videoGame: [Game] {
-        videoGames
+        HomeViewModel.videoGames
     }
     
     func filteredGame(_ index: Int) -> Game? {
@@ -88,7 +89,7 @@ extension HomeViewModel: HomeViewModelProtocol {
             return
         }
         
-        filteredVideoGames = videoGames.filter { game in
+        filteredVideoGames = HomeViewModel.videoGames.filter { game in
             guard let gameName = game.name else {
                 return false
             }
@@ -99,11 +100,11 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     func getGameDetailID(index: Int) -> Int {
-        return videoGames[index].id ?? 3498
+        return HomeViewModel.videoGames[index].id ?? 111
     }
     
     func game(_ index: Int) -> Game? {
-        videoGames[index + 3]
+        HomeViewModel.videoGames[index + 3]
     }
     
     func saveGame() {

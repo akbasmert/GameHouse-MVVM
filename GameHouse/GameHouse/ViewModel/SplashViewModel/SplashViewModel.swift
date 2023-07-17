@@ -50,13 +50,14 @@ final class SplashViewModel {
             self.delegate?.hideLoadingView()
             switch response {
             case .success(let movies):
-               // print("Mert: \(movies)")
-                for game in movies {
-                    CoreDataManager.shared.saveAudioData(game)
-                }
+                print("Mert: \(movies)")
+//                for game in movies {
+//                    CoreDataManager.shared.saveAudioData(game)
+//                }
+                
                 
                //videoGame = CoreDataManager.shared.fetchAudioData()
-               
+               // print("veriii*****\(CoreDataManager.shared.fetchAudioData())*****")
 //                self.movies = movies
                
                 // TODO: collectionview reload data

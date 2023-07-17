@@ -7,18 +7,15 @@
 
 import Foundation
 
-public struct DetailResponse: Decodable {
-    public let results: [GameDetail]
-
+public struct DetailResponse: Codable {
+  public  let gameDetail: GameDetail
+    
     private enum RootCodingKeys: String, CodingKey {
-        case results
+        case gameDetail = ""
     }
-
-    public init(from decoder: Decoder) throws {
+    
+   public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: RootCodingKeys.self)
-        self.results = try container.decode([GameDetail].self, forKey: .results)
+        self.gameDetail = try container.decode(GameDetail.self, forKey: .gameDetail)
     }
 }
-
-
-

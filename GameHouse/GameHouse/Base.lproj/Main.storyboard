@@ -56,7 +56,7 @@
                         <outlet property="collectionView" destination="eK1-gp-i5N" id="fIM-nb-3H6"/>
                         <outlet property="searchBar" destination="Vjh-S8-lUf" id="Eta-Sl-SKR"/>
                         <segue destination="7ZX-oj-tS8" kind="presentation" identifier="toSplashScreen" modalPresentationStyle="fullScreen" id="LA2-DL-H0I"/>
-                        <segue destination="NHx-xR-p7U" kind="show" identifier="toDetailVC" id="H7a-Nf-Gll"/>
+                        <segue destination="Laa-ez-rcw" kind="show" identifier="toDetailVC" id="6d3-tF-08B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,22 +64,143 @@
             <point key="canvasLocation" x="2231.2977099236641" y="353.52112676056339"/>
         </scene>
         <!--Detail View Controller-->
-        <scene sceneID="JBu-AI-OWm">
+        <scene sceneID="ejY-Qc-WX9">
             <objects>
-                <viewController id="NHx-xR-p7U" customClass="DetailViewController" customModule="GameHouse" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="wEx-QC-1eS">
+                <viewController id="Laa-ez-rcw" customClass="DetailViewController" customModule="GameHouse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EHG-ta-IiV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="avm-9c-2li"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oVy-e7-NwF">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YUn-8v-vHH">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="3768.6666666666665"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sw-Gh-jIe">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="235.66666666666666"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eraser" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-3T-LSv">
+                                                        <rect key="frame" x="12" y="12.666666666666671" width="369" height="222.66666666666663"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="12"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </imageView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="eQB-3T-LSv" firstAttribute="top" secondItem="6Sw-Gh-jIe" secondAttribute="top" constant="12" id="1n7-QR-UKa"/>
+                                                    <constraint firstAttribute="bottom" secondItem="eQB-3T-LSv" secondAttribute="bottom" id="jS0-2b-raY"/>
+                                                    <constraint firstAttribute="width" secondItem="6Sw-Gh-jIe" secondAttribute="height" multiplier="1:0.6" id="lBT-qK-sdH"/>
+                                                    <constraint firstItem="eQB-3T-LSv" firstAttribute="leading" secondItem="6Sw-Gh-jIe" secondAttribute="leading" constant="12" id="oQu-on-LLI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="eQB-3T-LSv" secondAttribute="trailing" constant="12" id="uLo-OF-MlS"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5r1-rd-gbK">
+                                                <rect key="frame" x="0.0" y="235.66666666666674" width="393" height="3533"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="BsB-Tg-Mxz">
+                                                        <rect key="frame" x="12" y="10" width="369" height="3523"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9A-w8-Z6S">
+                                                                <rect key="frame" x="0.0" y="0.0" width="369" height="38.666666666666664"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-he-Efa">
+                                                                <rect key="frame" x="0.0" y="43.666666666666629" width="369" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWa-jb-ndn">
+                                                                <rect key="frame" x="0.0" y="69" width="369" height="20.333333333333329"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ht-8s-oUj">
+                                                                <rect key="frame" x="0.0" y="94.333333333333258" width="369" height="3428.666666666667"/>
+                                                                <mutableString key="text">Mert: [GameHouseAPI.Game(id: Optional(3498), name: Optional("Grand Theft Auto V"), released: Optional("2013-09-17"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"), rating: Optional(4.47)), GameHouseAPI.Game(id: Optional(3328), name: Optional("The Witcher 3: Wild Hunt"), released: Optional("2015-05-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"), rating: Optional(4.66)), GameHouseAPI.Game(id: Optional(4200), name: Optional("Portal 2"), released: Optional("2011-04-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"), rating: Optional(4.61)), GameHouseAPI.Game(id: Optional(5286), name: Optional("Tomb Raider (2013)"), released: Optional("2013-03-05"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"), rating: Optional(4.05)), GameHouseAPI.Game(id: Optional(4291), name: Optional("Counter-Strike: Global Offensive"), released: Optional("2012-08-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"), rating: Optional(3.57)), GameHouseAPI.Game(id: Optional(13536), name: Optional("Portal"), released: Optional("2007-10-09"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg"), rating: Optional(4.51)), GameHouseAPI.Game(id: Optional(12020), name: Optional("Left 4 Dead 2"), released: Optional("2009-11-17"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"), rating: Optional(4.09)), GameHouseAPI.Game(id: Optional(5679), name: Optional("The Elder Scrolls V: Skyrim"), released: Optional("2011-11-11"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"), rating: Optional(4.42)), GameHouseAPI.Game(id: Optional(4062), name: Optional("BioShock Infinite"), released: Optional("2013-03-26"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"), rating: Optional(4.38)), GameHouseAPI.Game(id: Optional(28), name: Optional("Red Dead Redemption 2"), released: Optional("2018-10-26"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"), rating: Optional(4.59)), GameHouseAPI.Game(id: Optional(3439), name: Optional("Life is Strange"), released: Optional("2015-01-29"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"), rating: Optional(4.11)), GameHouseAPI.Game(id: Optional(802), name: Optional("Borderlands 2"), released: Optional("2012-09-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"), rating: Optional(4.02)), GameHouseAPI.Game(id: Optional(13537), name: Optional("Half-Life 2"), released: Optional("2004-11-16"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"), rating: Optional(4.49)), GameHouseAPI.Game(id: Optional(4286), name: Optional("BioShock"), released: Optional("2007-08-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"), rating: Optional(4.36)), GameHouseAPI.Game(id: Optional(1030), name: Optional("Limbo"), released: Optional("2010-07-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"), rating: Optional(4.15)), GameHouseAPI.Game(id: Optional(58175), name: Optional("God of War (2018)"), released: Optional("2018-04-20"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"), rating: Optional(4.58)), GameHouseAPI.Game(id: Optional(32), name: Optional("Destiny 2"), released: Optional("2017-09-06"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"), rating: Optional(3.55)), GameHouseAPI.Game(id: Optional(3070), name: Optional("Fallout 4"), released: Optional("2015-11-09"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"), rating: Optional(3.8)), GameHouseAPI.Game(id: Optional(2454), name: Optional("DOOM (2016)"), released: Optional("2016-05-13"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"), rating: Optional(4.38)), GameHouseAPI.Game(id: Optional(11859), name: Optional("Team Fortress 2"), released: Optional("2007-10-10"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"), rating: Optional(3.67))]
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+kaydedildi
+Optional(3328)
+hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Swift.DecodingError.Context(codingPath: [], debugDescription: "No value associated with key RootCodingKeys(stringValue: \"results\", intValue: nil) (\"results\").", underlyingError: nil))
+********JSON DECODE ERROR**********The data couldn’t be read because it is missing.</mutableString>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="BsB-Tg-Mxz" secondAttribute="bottom" id="6G3-Rd-EHN"/>
+                                                    <constraint firstAttribute="trailing" secondItem="BsB-Tg-Mxz" secondAttribute="trailing" constant="12" id="FbZ-Ro-Kbu"/>
+                                                    <constraint firstItem="BsB-Tg-Mxz" firstAttribute="top" secondItem="5r1-rd-gbK" secondAttribute="top" constant="10" id="gAH-OI-Ju8"/>
+                                                    <constraint firstItem="BsB-Tg-Mxz" firstAttribute="leading" secondItem="5r1-rd-gbK" secondAttribute="leading" constant="12" id="rHu-sJ-2Ya"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6Sw-Gh-jIe" firstAttribute="leading" secondItem="YUn-8v-vHH" secondAttribute="leading" id="LKV-mb-l4n"/>
+                                            <constraint firstItem="6Sw-Gh-jIe" firstAttribute="top" secondItem="YUn-8v-vHH" secondAttribute="top" id="XWv-e6-pc7"/>
+                                            <constraint firstAttribute="trailing" secondItem="6Sw-Gh-jIe" secondAttribute="trailing" id="h0D-aL-w9r"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YUn-8v-vHH" firstAttribute="leading" secondItem="oVy-e7-NwF" secondAttribute="leading" id="Eqg-I9-rnF"/>
+                                    <constraint firstAttribute="bottom" secondItem="YUn-8v-vHH" secondAttribute="bottom" id="kha-y3-8wr"/>
+                                    <constraint firstAttribute="trailing" secondItem="YUn-8v-vHH" secondAttribute="trailing" id="lrh-oW-ZNt"/>
+                                    <constraint firstItem="YUn-8v-vHH" firstAttribute="top" secondItem="oVy-e7-NwF" secondAttribute="top" id="tHR-qO-YNo"/>
+                                    <constraint firstItem="YUn-8v-vHH" firstAttribute="width" secondItem="oVy-e7-NwF" secondAttribute="width" id="y5Y-JD-Jhy"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ylz-hc-Hpg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oVy-e7-NwF" firstAttribute="top" secondItem="Ylz-hc-Hpg" secondAttribute="top" id="D2V-fx-FFw"/>
+                            <constraint firstItem="oVy-e7-NwF" firstAttribute="leading" secondItem="Ylz-hc-Hpg" secondAttribute="leading" id="h3f-Vg-Wk3"/>
+                            <constraint firstItem="Ylz-hc-Hpg" firstAttribute="bottom" secondItem="oVy-e7-NwF" secondAttribute="bottom" id="iOW-H5-7qA"/>
+                            <constraint firstItem="Ylz-hc-Hpg" firstAttribute="trailing" secondItem="oVy-e7-NwF" secondAttribute="trailing" id="ikj-pV-8D1"/>
+                        </constraints>
                     </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="oph-ey-Cs3"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationItem key="navigationItem" id="0X1-Bi-wKu"/>
+                    <connections>
+                        <outlet property="detailDescription" destination="1ht-8s-oUj" id="0S9-eP-XEd"/>
+                        <outlet property="detailImageView" destination="eQB-3T-LSv" id="OiV-CC-XSW"/>
+                        <outlet property="detailMetacritic" destination="eWa-jb-ndn" id="l0b-FK-m9A"/>
+                        <outlet property="detailReleaseDate" destination="ZhJ-he-Efa" id="Bwf-ej-hic"/>
+                        <outlet property="detailTitle" destination="N9A-w8-Z6S" id="uOM-yL-Jlk"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tul-5j-SFU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zvr-Rc-Y6B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3052.6717557251909" y="353.52112676056339"/>
+            <point key="canvasLocation" x="3119.8473282442746" y="353.52112676056339"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="60X-Zf-rVF">
@@ -93,28 +214,44 @@
                     </tabBar>
                     <connections>
                         <segue destination="vsz-O7-rOl" kind="relationship" relationship="viewControllers" id="vm7-Is-ZEa"/>
-                        <segue destination="YCM-b9-vUz" kind="relationship" relationship="viewControllers" id="hrq-wQ-Cwv"/>
+                        <segue destination="lMH-ER-dJk" kind="relationship" relationship="viewControllers" id="hrq-wQ-Cwv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="32d-yP-o9d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="377.86259541984731" y="-72.535211267605632"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites-->
         <scene sceneID="H7r-J7-65E">
             <objects>
-                <viewController id="YCM-b9-vUz" sceneMemberID="viewController">
+                <viewController id="YCM-b9-vUz" customClass="FavoriteViewController" customModule="GameHouse" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BPV-tn-aMa">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DNC-9t-SaI">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yLp-r6-bYY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DNC-9t-SaI" firstAttribute="leading" secondItem="yLp-r6-bYY" secondAttribute="leading" id="3cb-0L-PVV"/>
+                            <constraint firstItem="yLp-r6-bYY" firstAttribute="bottom" secondItem="DNC-9t-SaI" secondAttribute="bottom" id="9w8-Vd-ajN"/>
+                            <constraint firstItem="yLp-r6-bYY" firstAttribute="trailing" secondItem="DNC-9t-SaI" secondAttribute="trailing" id="Pf8-ys-nP8"/>
+                            <constraint firstItem="DNC-9t-SaI" firstAttribute="top" secondItem="yLp-r6-bYY" secondAttribute="top" id="iXx-77-V69"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="8b8-Je-gLa"/>
+                    <navigationItem key="navigationItem" title="Favorites" id="dxQ-kq-FpN"/>
+                    <connections>
+                        <outlet property="tableView" destination="DNC-9t-SaI" id="88E-oT-WaW"/>
+                        <segue destination="Laa-ez-rcw" kind="show" identifier="favoriteToDetail" id="deE-Fb-wy0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGX-3i-3fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="-311"/>
+            <point key="canvasLocation" x="2231.2977099236641" y="-311.26760563380282"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="WpH-lO-zDJ">
@@ -161,8 +298,31 @@
             </objects>
             <point key="canvasLocation" x="1304.5801526717557" y="353.52112676056339"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EcW-WJ-clb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lMH-ER-dJk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="heart.fill" catalog="system" id="8b8-Je-gLa"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dCd-5M-kex">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="YCM-b9-vUz" kind="relationship" relationship="rootViewController" id="JdI-iL-H9C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I0L-1M-7y6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1304.5801526717557" y="-311.26760563380282"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="deE-Fb-wy0"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="eraser" catalog="system" width="128" height="119"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">

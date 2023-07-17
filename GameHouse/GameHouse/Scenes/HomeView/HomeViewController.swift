@@ -33,11 +33,16 @@ class HomeViewController: UIViewController, LoadingShowable {
         collectionView.register(UINib(nibName: "HomeCollectionViewCell", bundle: nil),
                                 forCellWithReuseIdentifier: HomeCollectionViewCell.reuseIdentifier)
         collectionView.register(UINib(nibName: "PageViewCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: PageViewCollectionViewCell.reuseIdentifier)
+        collectionView.register(UINib(nibName: "NoDataCollectionViewCell", bundle: nil),
+                                forCellWithReuseIdentifier: NoDataCollectionViewCell.reuseIdentifier)
         collectionView.dataSource = self
         collectionView.delegate = self
         searchBar.delegate = self
         
+       
+        
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageTapped(notification:)), name: Notification.Name("ImageTapped"), object: nil)
+        
      
 
 
@@ -55,6 +60,9 @@ class HomeViewController: UIViewController, LoadingShowable {
 //            print("ID: \(gameEntity.id)")
 //            print("Name: \(gameEntity.name ?? "")")
 //            // Diğer özelliklere erişim...
+        
+        let notification = Notification(name: Notification.Name("CustomNotification"), object: nil, userInfo: nil)
+        NotificationCenter.default.post(notification)
 //        }
 
         navigationController?.setNavigationBarHidden(true, animated: false)
@@ -108,7 +116,11 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if isFilteredList {
-            return homeViewModel.filteredNumberOfItems
+            if homeViewModel.filteredNumberOfItems == 0 {
+                return 1
+            } else {
+                return homeViewModel.filteredNumberOfItems
+            }
         } else {
             if section == 0 {
                 return 1
@@ -120,15 +132,19 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        guard let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeCollectionViewCell else {
-            fatalError("no cell")
-        }
+        guard let homeCell = collectionView.dequeueReusableCell(withReuseIdentifier: HomeCollectionViewCell.reuseIdentifier, for: indexPath) as? HomeCollectionViewCell else { fatalError("no cell") }
+        guard let noDataCell = collectionView.dequeueReusableCell(withReuseIdentifier: NoDataCollectionViewCell.reuseIdentifier, for: indexPath) as? NoDataCollectionViewCell else { fatalError("no cell") }
         
         if isFilteredList {
-            if let game = self.homeViewModel.filteredGame(indexPath.row) {
-                homeCell.configure(game: game)
+            if homeViewModel.filteredNumberOfItems == 0 {
+                return noDataCell
+            } else {
+                if let game = self.homeViewModel.filteredGame(indexPath.row) {
+                    homeCell.configure(game: game)
+                }
+                return homeCell
             }
-            return homeCell
+           
             
         } else {
             if indexPath.section == 0 {
@@ -153,37 +169,45 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//
-//        if isFilteredList {
-//            detailGameId = homeViewModel.getGameDetailID(index: indexPath.row)
-//            performSegue(withIdentifier: "toDetailVC", sender: nil)
-//        } else {
-//            if indexPath.section == 0 {
-//
-//            } else {
-//                detailGameId = homeViewModel.getGameDetailID(index: indexPath.row)
-//                performSegue(withIdentifier: "toDetailVC", sender: nil)
-//            }
-//        }
-//
-//    }
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if isFilteredList || indexPath.section != 0 {
-            detailGameId = homeViewModel.getGameDetailID(index: indexPath.row)
-            performSegue(withIdentifier: "toDetailVC", sender: nil)
+
+        if isFilteredList {
+            if homeViewModel.filteredNumberOfItems != 0 {
+                detailGameId = homeViewModel.getGameDetailID(index: indexPath.row + 3)
+                performSegue(withIdentifier: "toDetailVC", sender: nil)
+            }
+           
+        } else {
+            if indexPath.section == 0 {
+
+            } else {
+                detailGameId = homeViewModel.getGameDetailID(index: indexPath.row + 3)
+                performSegue(withIdentifier: "toDetailVC", sender: nil)
+            }
         }
+
     }
 
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        if isFilteredList || indexPath.section != 0 {
+//
+//            detailGameId = homeViewModel.getGameDetailID(index: indexPath.row + 3)
+//            performSegue(withIdentifier: "toDetailVC", sender: nil)
+//        }
+//    }
 }
 
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.collectionView.bounds.size.width
+        let height = self.collectionView.bounds.size.height
         
         if isFilteredList {
-            return CGSize(width: width, height: 90)
+            if homeViewModel.filteredNumberOfItems == 0 {
+                return CGSize(width: width, height: height)
+            } else {
+                return CGSize(width: width, height: 90)
+            }
         } else {
             if indexPath.section == 0 {
                 return CGSize(width: width, height: width * 0.7)
@@ -226,6 +250,7 @@ extension HomeViewController: UISearchBarDelegate {
 }
 
 extension HomeViewController: HomeViewModelDelegate {
+    
     func showLoadingView() {
         showLoading()
     }

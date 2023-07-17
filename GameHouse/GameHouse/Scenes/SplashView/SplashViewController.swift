@@ -28,22 +28,10 @@ class SplashViewController: BaseViewController {
         splashViewModel.fetchData()
     }
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-////        if segue.identifier == "toHomeVC" {
-//////            let destinationDetailVC = segue.destination as! HomeViewController
-//////            destinationDetailVC.homeViewModel  = HomeViewModel.shared
-////        }
-//        if segue.identifier == "toHomeVC" {
-//            if let destinationDetailVC = segue.destination as? HomeViewController {
-//                destinationDetailVC.homeViewModel = HomeViewModel.shared
-//            }
-//        }
-//    }
 }
 
 extension SplashViewController: SplashViewModelDelegate {
     func toHomeViewController() {
-      //  performSegue(withIdentifier: "toHomeVC", sender: nil)
         dismiss(animated: false)
     }
     

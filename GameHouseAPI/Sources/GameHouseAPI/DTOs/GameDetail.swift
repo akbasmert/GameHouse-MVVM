@@ -7,21 +7,23 @@
 
 import Foundation
 
-
-public struct GameDetail: Decodable {
-       public let id: Int?
-       public let name, description: String?
-       public let metacritic: Int?
-       public let released: String?
-       public let backgroundImage: String?
-       public let rating: Double?
+public struct GameDetail: Codable {
+    public let id: Int?
+    public let slug: String?
+    public let name, released: String?
+    public let nameOriginal: String?
+    public let description: String?
+    public let metacritic: Int?
+    public let backgroundImage: String?
+    // Diğer özellikler buraya gelecek
 
     enum CodingKeys: String, CodingKey {
-        case id, name
-        case description, metacritic
-        case released
+        case id
+        case slug
+        case name, released
+        case nameOriginal = "name_original"
+        case description = "description_raw"
         case backgroundImage = "background_image"
-        case rating
-
+        case metacritic
     }
 }
