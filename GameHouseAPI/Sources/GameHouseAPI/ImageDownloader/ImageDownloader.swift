@@ -66,6 +66,5 @@ public class ImageDownloader {
             download(imageURL: url, completion: completion)
         }
     }
-    
 }
 

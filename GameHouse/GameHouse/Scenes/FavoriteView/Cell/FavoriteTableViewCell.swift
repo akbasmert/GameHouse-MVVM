@@ -7,11 +7,12 @@
 
 import UIKit
 import GameHouseAPI
+import SDWebImage
 
 class FavoriteTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var favoriteImageView: UIImageView!
-    
     @IBOutlet weak var ratingLabel: UILabel!
     
     static let reuseIdentifier = String(describing: FavoriteTableViewCell.self)
@@ -27,23 +28,23 @@ class FavoriteTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    
-    func configure(game: Game) {
+    func configure(game: GameEntity) {
         DispatchQueue.main.async {
             self.setImage(game: game)
         }
-        if let name = game.name {
-            titleLabel.text = name
-        } else {
-            titleLabel.text = ""
+        
+        guard let name = game.name else {
+            return titleLabel.text = ""
         }
         
-        if let rating = game.rating, let released = game.released {
-            ratingLabel.text = "\(rating) - \(released)"
-        } else {
-            ratingLabel.text = ""
+        titleLabel.text = name
+        
+        guard let released = game.released else {
+            return ratingLabel.text = "\(game.rating) - Not Released"
         }
+        ratingLabel.text = "\(game.rating) - \(released)"
     }
+
     
 //    func setImage(game: Game) {
 //        ImageDownloader.shared.image(news: game) { [weak self] data, error in
@@ -57,12 +58,11 @@ class FavoriteTableViewCell: UITableViewCell {
 //            }
 //        }
 //    }
-    func setImage(game: Game) {
+    func setImage(game: GameEntity) {
         let fullPath = game.backgroundImage ?? ""
         
         if let url = URL(string: fullPath) {
             favoriteImageView.sd_setImage(with: url)
         }
      }
-    
 }

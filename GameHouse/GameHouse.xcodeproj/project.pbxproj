@@ -39,6 +39,9 @@
 		41D9CBDF2A64631000B225DE /* FavoriteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D9CBDD2A64631000B225DE /* FavoriteTableViewCell.xib */; };
 		41D9CBE22A65197000B225DE /* NoDataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBE02A65197000B225DE /* NoDataCollectionViewCell.swift */; };
 		41D9CBE32A65197000B225DE /* NoDataCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41D9CBE12A65197000B225DE /* NoDataCollectionViewCell.xib */; };
+		41D9CBE62A66657400B225DE /* Games.json in Resources */ = {isa = PBXBuildFile; fileRef = 41D9CBE52A66657400B225DE /* Games.json */; };
+		41D9CBE82A666FA200B225DE /* MockHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBE72A666FA200B225DE /* MockHomeViewController.swift */; };
+		41D9CBEA2A6674DA00B225DE /* HomeViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBE92A6674DA00B225DE /* HomeViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +97,9 @@
 		41D9CBDD2A64631000B225DE /* FavoriteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteTableViewCell.xib; sourceTree = "<group>"; };
 		41D9CBE02A65197000B225DE /* NoDataCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataCollectionViewCell.swift; sourceTree = "<group>"; };
 		41D9CBE12A65197000B225DE /* NoDataCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoDataCollectionViewCell.xib; sourceTree = "<group>"; };
+		41D9CBE52A66657400B225DE /* Games.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Games.json; sourceTree = "<group>"; };
+		41D9CBE72A666FA200B225DE /* MockHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHomeViewController.swift; sourceTree = "<group>"; };
+		41D9CBE92A6674DA00B225DE /* HomeViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +171,7 @@
 		41B8F8CC2A605C4D000BF7E6 /* GameHouseTests */ = {
 			isa = PBXGroup;
 			children = (
+				41D9CBE42A6664E100B225DE /* Mock */,
 				41B8F8CD2A605C4D000BF7E6 /* GameHouseTests.swift */,
 			);
 			path = GameHouseTests;
@@ -332,6 +339,16 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		41D9CBE42A6664E100B225DE /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				41D9CBE52A66657400B225DE /* Games.json */,
+				41D9CBE72A666FA200B225DE /* MockHomeViewController.swift */,
+				41D9CBE92A6674DA00B225DE /* HomeViewModelTests.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -457,6 +474,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41D9CBE62A66657400B225DE /* Games.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,6 +520,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				41B8F8CE2A605C4D000BF7E6 /* GameHouseTests.swift in Sources */,
+				41D9CBE82A666FA200B225DE /* MockHomeViewController.swift in Sources */,
+				41D9CBEA2A6674DA00B225DE /* HomeViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

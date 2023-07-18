@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct DetailResponse: Codable {
+public struct DetailResponse: Decodable {
   public  let gameDetail: GameDetail
     
     private enum RootCodingKeys: String, CodingKey {

@@ -29,9 +29,7 @@ public class VideoGameService: VideoGameServiceProtocol {
                     return
                 }
                 let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                    guard let data = data, error == nil else {
-                        return
-                    }
+                    guard let data = data, error == nil else { return }
                     do {
                         let response = try decoder.decode(GameResponse.self, from: data)
                         competion(.success(response.results))

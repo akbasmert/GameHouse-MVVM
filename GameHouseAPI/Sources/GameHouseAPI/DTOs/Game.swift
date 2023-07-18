@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - Welcome
 public struct GameResult: Decodable {
    public let count: Int?
    public let next: String?
@@ -18,19 +17,16 @@ public struct GameResult: Decodable {
     }
 }
 
-// MARK: - Result
+
 public struct Game: Decodable {
    public let id: Int?
    public let name, released: String?
    public let backgroundImage: String?
    public let rating: Double?
   
-  
-   
     enum CodingKeys: String, CodingKey {
         case id, name, released
         case backgroundImage = "background_image"
         case rating
-       
     }
 }

@@ -80,8 +80,8 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Sw-Gh-jIe">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="235.66666666666666"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eraser" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-3T-LSv">
-                                                        <rect key="frame" x="12" y="12.666666666666671" width="369" height="222.66666666666663"/>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-3T-LSv">
+                                                        <rect key="frame" x="12" y="12" width="369" height="223.66666666666669"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="12"/>
@@ -105,27 +105,26 @@
                                                         <rect key="frame" x="12" y="10" width="369" height="3523"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N9A-w8-Z6S">
-                                                                <rect key="frame" x="0.0" y="0.0" width="369" height="38.666666666666664"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="369" height="2879"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhJ-he-Efa">
-                                                                <rect key="frame" x="0.0" y="43.666666666666629" width="369" height="20.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="2884" width="369" height="20.333333333333485"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eWa-jb-ndn">
-                                                                <rect key="frame" x="0.0" y="69" width="369" height="20.333333333333329"/>
+                                                                <rect key="frame" x="0.0" y="2909.3333333333335" width="369" height="20.333333333333485"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ht-8s-oUj">
-                                                                <rect key="frame" x="0.0" y="94.333333333333258" width="369" height="3428.666666666667"/>
-                                                                <mutableString key="text">Mert: [GameHouseAPI.Game(id: Optional(3498), name: Optional("Grand Theft Auto V"), released: Optional("2013-09-17"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/456/456dea5e1c7e3cd07060c14e96612001.jpg"), rating: Optional(4.47)), GameHouseAPI.Game(id: Optional(3328), name: Optional("The Witcher 3: Wild Hunt"), released: Optional("2015-05-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"), rating: Optional(4.66)), GameHouseAPI.Game(id: Optional(4200), name: Optional("Portal 2"), released: Optional("2011-04-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/328/3283617cb7d75d67257fc58339188742.jpg"), rating: Optional(4.61)), GameHouseAPI.Game(id: Optional(5286), name: Optional("Tomb Raider (2013)"), released: Optional("2013-03-05"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/021/021c4e21a1824d2526f925eff6324653.jpg"), rating: Optional(4.05)), GameHouseAPI.Game(id: Optional(4291), name: Optional("Counter-Strike: Global Offensive"), released: Optional("2012-08-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/736/73619bd336c894d6941d926bfd563946.jpg"), rating: Optional(3.57)), GameHouseAPI.Game(id: Optional(13536), name: Optional("Portal"), released: Optional("2007-10-09"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/7fa/7fa0b586293c5861ee32490e953a4996.jpg"), rating: Optional(4.51)), GameHouseAPI.Game(id: Optional(12020), name: Optional("Left 4 Dead 2"), released: Optional("2009-11-17"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/d58/d588947d4286e7b5e0e12e1bea7d9844.jpg"), rating: Optional(4.09)), GameHouseAPI.Game(id: Optional(5679), name: Optional("The Elder Scrolls V: Skyrim"), released: Optional("2011-11-11"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/7cf/7cfc9220b401b7a300e409e539c9afd5.jpg"), rating: Optional(4.42)), GameHouseAPI.Game(id: Optional(4062), name: Optional("BioShock Infinite"), released: Optional("2013-03-26"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/fc1/fc1307a2774506b5bd65d7e8424664a7.jpg"), rating: Optional(4.38)), GameHouseAPI.Game(id: Optional(28), name: Optional("Red Dead Redemption 2"), released: Optional("2018-10-26"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/511/5118aff5091cb3efec399c808f8c598f.jpg"), rating: Optional(4.59)), GameHouseAPI.Game(id: Optional(3439), name: Optional("Life is Strange"), released: Optional("2015-01-29"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/562/562553814dd54e001a541e4ee83a591c.jpg"), rating: Optional(4.11)), GameHouseAPI.Game(id: Optional(802), name: Optional("Borderlands 2"), released: Optional("2012-09-18"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/49c/49c3dfa4ce2f6f140cc4825868e858cb.jpg"), rating: Optional(4.02)), GameHouseAPI.Game(id: Optional(13537), name: Optional("Half-Life 2"), released: Optional("2004-11-16"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/b8c/b8c243eaa0fbac8115e0cdccac3f91dc.jpg"), rating: Optional(4.49)), GameHouseAPI.Game(id: Optional(4286), name: Optional("BioShock"), released: Optional("2007-08-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/bc0/bc06a29ceac58652b684deefe7d56099.jpg"), rating: Optional(4.36)), GameHouseAPI.Game(id: Optional(1030), name: Optional("Limbo"), released: Optional("2010-07-21"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/942/9424d6bb763dc38d9378b488603c87fa.jpg"), rating: Optional(4.15)), GameHouseAPI.Game(id: Optional(58175), name: Optional("God of War (2018)"), released: Optional("2018-04-20"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/4be/4be6a6ad0364751a96229c56bf69be59.jpg"), rating: Optional(4.58)), GameHouseAPI.Game(id: Optional(32), name: Optional("Destiny 2"), released: Optional("2017-09-06"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/34b/34b1f1850a1c06fd971bc6ab3ac0ce0e.jpg"), rating: Optional(3.55)), GameHouseAPI.Game(id: Optional(3070), name: Optional("Fallout 4"), released: Optional("2015-11-09"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/d82/d82990b9c67ba0d2d09d4e6fa88885a7.jpg"), rating: Optional(3.8)), GameHouseAPI.Game(id: Optional(2454), name: Optional("DOOM (2016)"), released: Optional("2016-05-13"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/c4b/c4b0cab189e73432de3a250d8cf1c84e.jpg"), rating: Optional(4.38)), GameHouseAPI.Game(id: Optional(11859), name: Optional("Team Fortress 2"), released: Optional("2007-10-10"), description: nil, backgroundImage: Optional("https://media.rawg.io/media/games/46d/46d98e6910fbc0706e2948a7cc9b10c5.jpg"), rating: Optional(3.67))]
-kaydedildi
+                                                                <rect key="frame" x="0.0" y="2934.666666666667" width="369" height="588.33333333333348"/>
+                                                                <string key="text">kaydedildi
 kaydedildi
 kaydedildi
 kaydedildi
@@ -147,7 +146,7 @@ kaydedildi
 kaydedildi
 Optional(3328)
 hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Swift.DecodingError.Context(codingPath: [], debugDescription: "No value associated with key RootCodingKeys(stringValue: \"results\", intValue: nil) (\"results\").", underlyingError: nil))
-********JSON DECODE ERROR**********The data couldn’t be read because it is missing.</mutableString>
+********JSON DECODE ERROR**********The data couldn’t be read because it is missing.</string>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -261,17 +260,18 @@ hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Sw
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mert" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8bS-z1-O6B">
-                                <rect key="frame" x="167.33333333333334" y="409" width="58.333333333333343" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game House" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYT-aA-bZY">
+                                <rect key="frame" x="80.666666666666671" y="402" width="231.66666666666663" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="40"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="highlightedColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pWB-3U-27n"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8bS-z1-O6B" firstAttribute="centerY" secondItem="ULH-QC-dJz" secondAttribute="centerY" id="5We-wc-uKz"/>
-                            <constraint firstItem="8bS-z1-O6B" firstAttribute="centerX" secondItem="ULH-QC-dJz" secondAttribute="centerX" id="dtj-iL-vwZ"/>
+                            <constraint firstItem="XYT-aA-bZY" firstAttribute="centerX" secondItem="ULH-QC-dJz" secondAttribute="centerX" id="Hjo-gF-w0s"/>
+                            <constraint firstItem="XYT-aA-bZY" firstAttribute="centerY" secondItem="ULH-QC-dJz" secondAttribute="centerY" id="tkP-Is-gST"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -322,7 +322,6 @@ hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Sw
         <segue reference="deE-Fb-wy0"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="eraser" catalog="system" width="128" height="119"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <systemColor name="systemBackgroundColor">

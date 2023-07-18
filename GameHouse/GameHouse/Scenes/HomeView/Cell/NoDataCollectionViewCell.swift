@@ -14,5 +14,4 @@ class NoDataCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
 }

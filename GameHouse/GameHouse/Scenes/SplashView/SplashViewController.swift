@@ -7,10 +7,6 @@
 
 import UIKit
 
-protocol SplashViewControllerProtocol: AnyObject {
- //   func noInternetConecction()
-}
-
 class SplashViewController: BaseViewController {
 
     var splashViewModel: SplashViewModelProtocol! {
@@ -23,14 +19,12 @@ class SplashViewController: BaseViewController {
         super.viewDidLoad()
         
         splashViewModel = SplashViewModel.shared
-        // Do any additional setup after loading the view.
         splashViewModel.internetConnection()
-        splashViewModel.fetchData()
     }
-    
 }
 
 extension SplashViewController: SplashViewModelDelegate {
+    
     func toHomeViewController() {
         dismiss(animated: false)
     }
@@ -48,8 +42,4 @@ extension SplashViewController: SplashViewModelDelegate {
     func hideLoadingView() {
         hideLoading()
     }
-}
-
-extension SplashViewController: SplashViewControllerProtocol {
-  
 }

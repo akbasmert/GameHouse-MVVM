@@ -10,6 +10,7 @@ import GameHouseAPI
 import SDWebImage
 
 class HomeCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingReleasedLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -57,6 +58,4 @@ class HomeCollectionViewCell: UICollectionViewCell {
             imageView.sd_setImage(with: url)
         }
      }
-
-
 }

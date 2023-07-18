@@ -9,24 +9,27 @@ import Foundation
 import GameHouseAPI
 
 protocol HomeViewModelProtocol {
+    
     var delegate: HomeViewModelDelegate? { get set }
     var videoGame: [Game] { get }
     var numberOfItems: Int { get }
     var filteredNumberOfItems: Int { get }
     
+    func viewDidLoad()
     func filteredGame(key: String)
     func getGameDetailID(index: Int) -> Int
     func game(_ index: Int) -> Game?
     func filteredGame(_ index: Int) -> Game?
     func fetchData()
-    func saveGame()
 }
 
 protocol HomeViewModelDelegate: AnyObject {
+    
+    func setupCollectionView()
+    func setupSearchBar()
     func showLoadingView()
     func hideLoadingView()
     func reloadData()
-   
 }
 
 final class HomeViewModel: NSObject {
@@ -35,7 +38,7 @@ final class HomeViewModel: NSObject {
     
     let service: VideoGameServiceProtocol
     weak var delegate: HomeViewModelDelegate?
-    static var videoGames: [Game] = []
+    private var videoGames: [Game] = []
     private var filteredVideoGames: [Game] = []
     
     init(service: VideoGameServiceProtocol) {
@@ -43,24 +46,16 @@ final class HomeViewModel: NSObject {
     }
     
     fileprivate func fetchGame() {
-        // TODO: Show loading indicator puan için önemli
-        // ViewControllarda loading gösterilmesini iste/haber ver
         self.delegate?.showLoadingView()
         service.fetchGameVideo { [weak self] response in
             guard let self else { return }
-            // TODO: hide loading
-            // ViewControllarda loading gizlemesini iste/haber ver
             self.delegate?.hideLoadingView()
             switch response {
             case .success(let gameVideos):
-                print("Mert: \(gameVideos)")
-                HomeViewModel.videoGames = gameVideos
-              
-                // TODO: collectionview reload data
-                // View Controllarda collectionview i güncelle.
+                videoGames = gameVideos
                self.delegate?.reloadData()
             case .failure(let error):
-                print("Mert: \(error)")
+                print("\(error)")
             }
         }
     }
@@ -73,11 +68,17 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     var numberOfItems: Int {
-        HomeViewModel.videoGames.count
+        videoGames.count
     }
     
     var videoGame: [Game] {
-        HomeViewModel.videoGames
+        videoGames
+    }
+    
+    func viewDidLoad() {
+        self.fetchData()
+        self.delegate?.setupCollectionView()
+        self.delegate?.setupSearchBar()
     }
     
     func filteredGame(_ index: Int) -> Game? {
@@ -85,42 +86,22 @@ extension HomeViewModel: HomeViewModelProtocol {
     }
     
     func filteredGame(key: String) {
-        guard key.count >= 3 else {
-            return
-        }
-        
-        filteredVideoGames = HomeViewModel.videoGames.filter { game in
-            guard let gameName = game.name else {
-                return false
-            }
+        guard key.count >= 3 else { return }
+        filteredVideoGames = videoGames.filter { game in
+            guard let gameName = game.name else { return false }
             return gameName.lowercased().contains(key.lowercased())
         }
-        
-        print("filtreleme sonuc: \(filteredVideoGames)")
     }
     
     func getGameDetailID(index: Int) -> Int {
-        return HomeViewModel.videoGames[index].id ?? 111
+        return videoGames[index].id ?? 111
     }
     
     func game(_ index: Int) -> Game? {
-        HomeViewModel.videoGames[index + 3]
-    }
-    
-    func saveGame() {
-      //  let gameEntities = CoreDataManager.shared.fetchAudioData()
-       
-//        for gameEntity in gameEntities {
-//            print("ID: \(gameEntity.id)")
-//            print("Name: \(gameEntity.name ?? "")")
-//
-//            // Diğer özelliklere erişim...
-//        }
+        videoGames[index + 3]
     }
     
     func fetchData() {
         fetchGame()
     }
-    
-    
 }

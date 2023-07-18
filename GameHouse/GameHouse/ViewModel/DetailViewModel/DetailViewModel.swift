@@ -9,6 +9,7 @@ import GameHouseAPI
 import SDWebImage
 
 protocol DetailViewModelProtocol {
+    
     var delegate: DetailViewModelDelegate?  { get set }
     var getTitle: String { get }
     var getReleaseDate: String { get }
@@ -19,10 +20,10 @@ protocol DetailViewModelProtocol {
     func fetchData(id: Int)
     func checkGameData(gameId: Int)
     func isSavedGameId(gameId: Int) -> Bool
-    
 }
 
 protocol DetailViewModelDelegate: AnyObject {
+    
     func showLoadingView()
     func hideLoadingView()
     func setTitle()
@@ -30,7 +31,6 @@ protocol DetailViewModelDelegate: AnyObject {
     func setMetacritic()
     func setDescription()
     func setImage()
-    
 }
 
 final class DetailViewModel {
@@ -38,10 +38,8 @@ final class DetailViewModel {
     static let shared = DetailViewModel(service: VideoGameDetailService())
     let  service: VideoGameDetailServiceProtocol
     weak var delegate: DetailViewModelDelegate?
-    
     private var detailGame: GameDetail?
   
-    
     init(service: VideoGameDetailServiceProtocol) {
         self.service = service
     }
@@ -54,7 +52,7 @@ final class DetailViewModel {
             self.delegate?.hideLoadingView()
             switch response {
             case .success(let detailGame):
-              
+
                 self.detailGame = detailGame
                 DispatchQueue.main.async {
                     self.delegate?.setTitle()
@@ -62,33 +60,30 @@ final class DetailViewModel {
                     self.delegate?.setDescription()
                     self.delegate?.setReleaseDate()
                     self.delegate?.setImage()
-                    
                 }
                
-              
-                
             case .failure(let error):
                 print("hata: \(error)")
-                
             }
         }
     }
 }
 
 extension DetailViewModel: DetailViewModelProtocol {
-   
+
     func isSavedGameId(gameId: Int) -> Bool {
         let audioData = CoreDataManager.shared.fetchAudioData()
-        return audioData.contains(gameId)
+        return audioData.contains { $0.id == gameId }
     }
 
     func checkGameData(gameId: Int) {
-        let audioData = CoreDataManager.shared.fetchAudioData()
-        
-        if audioData.contains(gameId) {
-            CoreDataManager.shared.deleteAudioData(withTrackId: gameId)
+        let gameEntities = CoreDataManager.shared.fetchAudioData()
+        let existingGameEntity = gameEntities.first { $0.id == Int64(gameId) }
+        if let existingGameEntity = existingGameEntity {
+            CoreDataManager.shared.deleteAudioData(withID: Int(existingGameEntity.id))
         } else {
-            CoreDataManager.shared.saveAudioData(Int64(gameId))
+            guard let game =  detailGame else { return  }
+            CoreDataManager.shared.saveAudioData(game)
         }
     }
 
@@ -116,9 +111,6 @@ extension DetailViewModel: DetailViewModelProtocol {
         guard let imageURL = detailGame?.backgroundImage else {
               return nil
           }
-          
         return SDImageCache.shared.imageFromDiskCache(forKey: imageURL)
-      }
-    
-    
+    }
 }

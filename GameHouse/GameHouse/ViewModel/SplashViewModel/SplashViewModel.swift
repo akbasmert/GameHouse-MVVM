@@ -9,13 +9,14 @@ import Foundation
 import GameHouseAPI
 
 protocol SplashViewModelProtocol {
+    
     var delegate: SplashViewModelDelegate? { get set }
     
-    func fetchData()
     func internetConnection()
 }
 
 protocol SplashViewModelDelegate: AnyObject {
+    
     func showLoadingView()
     func hideLoadingView()
     func noInternetConnection()
@@ -33,62 +34,17 @@ final class SplashViewModel {
     init(service: VideoGameServiceProtocol) {
         self.service = service
     }
-    
-//    func checkInternetConnection() {
-//        let internetStatus = service.isConnectedToInternet()
-//
-//    }
-    
-    fileprivate func fetchGame() {
-        // TODO: Show loading indicator puan için önemli
-        // ViewControllarda loading gösterilmesini iste/haber ver
-        self.delegate?.showLoadingView()
-        service.fetchGameVideo { [weak self] response in
-            guard let self else { return }
-            // TODO: hide loading
-            // ViewControllarda loading gizlemesini iste/haber ver
-            self.delegate?.hideLoadingView()
-            switch response {
-            case .success(let movies):
-                print("Mert: \(movies)")
-//                for game in movies {
-//                    CoreDataManager.shared.saveAudioData(game)
-//                }
-                
-                
-               //videoGame = CoreDataManager.shared.fetchAudioData()
-               // print("veriii*****\(CoreDataManager.shared.fetchAudioData())*****")
-//                self.movies = movies
-               
-                // TODO: collectionview reload data
-                // View Controllarda collectionview i güncelle.
-//                self.delegate?.reloadData()
-            case .failure(let error):
-                print("Mert: \(error)")
-            }
-        }
-    }
 }
 
 extension SplashViewModel: SplashViewModelProtocol {
-    func fetchData() {
-        fetchGame()
-    }
-    
-    
+  
     func internetConnection() {
         if service.isConnectedToInternet() {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-              //  self.router.navigate(.homeScreen)
                 self.delegate?.toHomeViewController()
             }
-            
-           
         } else {
-          //  view.noInternetConnection()
             self.delegate?.noInternetConnection()
         }
     }
-    
-
 }

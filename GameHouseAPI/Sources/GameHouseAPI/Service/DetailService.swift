@@ -31,7 +31,6 @@ public class VideoGameDetailService:VideoGameDetailServiceProtocol {
                 }
                 return
             }
-            
             do {
                 let decoder = JSONDecoder()
                 let gameDetail = try decoder.decode(GameDetail.self, from: data)
@@ -41,10 +40,10 @@ public class VideoGameDetailService:VideoGameDetailServiceProtocol {
                 print("JSON DECODE HATASI: \(error.localizedDescription)")
             }
         }
-        
         task.resume()
     }
 }
-        enum APIError: Error {
-            case invalidData
-        }
+
+enum APIError: Error {
+    case invalidData
+}
