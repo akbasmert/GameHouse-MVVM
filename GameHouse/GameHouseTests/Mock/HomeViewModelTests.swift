@@ -6,33 +6,63 @@
 //
 
 import XCTest
+@testable import GameHouse
 @testable import GameHouseAPI
 
 final class HomeViewModelTests: XCTestCase {
     
     var viewModel: HomeViewModel!
-    var viewController: MockHomeViewController!
+    var view: MockHomeViewController!
       
-      override func setUp() {
-          super.setUp()
-          viewController = .init()
-          viewModel = HomeViewModel(service: VideoGameService())
-      }
+    override func setUp() {
+        super.setUp()
+        view = MockHomeViewController()
+        viewModel = HomeViewModel(service: VideoGameService())
+        viewModel.delegate = view
+    }
+
       
       override func tearDown() {
-          viewController = nil
+          view = nil
           viewModel = nil
           super.tearDown()
       }
     
     func test_viewDidLoad_InvokesRequiredViewMethods() {
-        XCTAssertFalse(viewController.isInvokedSetupCollectionView)
-        XCTAssertFalse(viewController.isInvokedSetupSearchBar)
+        XCTAssertFalse(view.isInvokedSetupCollectionView)
+        XCTAssertFalse(view.isInvokedSetupSearchBar)
         
         viewModel.viewDidLoad()
         
-        XCTAssertTrue(viewController.isInvokedSetupCollectionView)
-        XCTAssertTrue(viewController.isInvokedSetupSearchBar)
+        XCTAssertTrue(view.isInvokedSetupCollectionView)
+        XCTAssertTrue(view.isInvokedSetupSearchBar)
     }
 
+    func test_fetchAudiosOutput() {
+        XCTAssertFalse(view.isInvokedHideLoading)
+        XCTAssertEqual(viewModel.numberOfItems, 0)
+        XCTAssertFalse(view.isInvokedReloadData)
+
+        viewModel.fetchData()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            XCTAssertTrue(self.view.isInvokedHideLoading)
+           
+            XCTAssertTrue(self.view.isInvokedReloadData)
+        }
+        XCTAssertEqual(self.viewModel.numberOfItems, 20)
+    }
 }
+
+extension Game {
+    static var response: Game {
+        let bundle = Bundle(for: HomeViewModelTests.self)
+        let path = bundle.path(forResource: "Games", ofType: "json")!
+        let file = try! String(contentsOfFile: path)
+        let data = file.data(using: .utf8)!
+        let decoder = Decoders.dateDecoder
+        let response = try! decoder.decode(Game.self, from: data)
+        return response
+    }
+}
+ 

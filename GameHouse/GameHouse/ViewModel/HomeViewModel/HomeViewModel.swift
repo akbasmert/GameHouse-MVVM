@@ -53,7 +53,9 @@ final class HomeViewModel: NSObject {
             switch response {
             case .success(let gameVideos):
                 videoGames = gameVideos
-               self.delegate?.reloadData()
+                DispatchQueue.main.async {
+                              self.delegate?.reloadData()
+                          }
             case .failure(let error):
                 print("\(error)")
             }

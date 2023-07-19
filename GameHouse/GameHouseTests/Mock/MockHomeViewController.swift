@@ -7,6 +7,7 @@
 
 import Foundation
 @testable import GameHouse
+import SDWebImage
 
 final class MockHomeViewController: HomeViewModelDelegate {
     
@@ -15,9 +16,9 @@ final class MockHomeViewController: HomeViewModelDelegate {
     
     func setupCollectionView() {
         isInvokedSetupCollectionView = true
-        invokedSetupCollectionViewCount  += 1
+        invokedSetupCollectionViewCount += 1
     }
-    
+
     var isInvokedSetupSearchBar = false
     var invokedSetupSearchBarCount = 0
 
