@@ -9,33 +9,96 @@ import XCTest
 
 final class GameHouseUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    private var app: XCUIApplication!
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
+    override func setUp() {
+        super.setUp()
         continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        app = XCUIApplication()
+        app.launchArguments.append("******** UITest ********")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
+    
+    func test_navigate_home_to_detail_view_controller() {
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+        sleep(1)
+        
+        XCTAssertTrue(app.isSearchBarDisplayed)
+        XCTAssertTrue(app.isCollectionViewDisplayed)
+        
+        app.searchBar.tap()
+        app.searchBar.typeText("Tom")
+        app.keyboards.buttons["Ara"].tap()
+       
+        let firstCell = app.collectionView.cells.element(boundBy: 0)
+        firstCell.tap()
+   
+        sleep(1)
+        
+        XCTAssertTrue(app.isDetailTitleDisplayed)
+        XCTAssertTrue(app.isDetailMetacriticDisplayed)
+        XCTAssertTrue(app.isDetailDescriptionDisplayed)
+        XCTAssertTrue(app.isDetailImageViewDisplayed)
+        XCTAssertTrue(app.isDetailReleaseDateDisplayed)
     }
 }
+
+
+extension XCUIApplication {
+    
+    var searchBar: XCUIElement! {
+        otherElements["searchBar"]
+    }
+ 
+    var collectionView: XCUIElement! {
+        collectionViews["collectionView"]
+    }
+    
+    var detailImageView: XCUIElement! {
+        images.matching(identifier: "detailImageView").element
+    }
+    
+    var detailTitle: XCUIElement! {
+        staticTexts.matching(identifier: "detailTitle").element
+    }
+    
+    var detailReleaseDate: XCUIElement! {
+        staticTexts.matching(identifier: "detailReleaseDate").element
+    }
+    
+    var detailMetacritic: XCUIElement! {
+        staticTexts.matching(identifier: "detailMetacritic").element
+    }
+    
+    var detailDescription: XCUIElement! {
+        staticTexts.matching(identifier: "detailDescription").element
+    }
+    
+    var isSearchBarDisplayed: Bool {
+        searchBar.exists
+    }
+    
+    var isCollectionViewDisplayed: Bool {
+        collectionView.exists
+    }
+    
+    var isDetailImageViewDisplayed: Bool {
+        detailImageView.exists
+    }
+    
+    var isDetailTitleDisplayed: Bool {
+        detailTitle.exists
+    }
+    
+    var isDetailReleaseDateDisplayed: Bool {
+        detailReleaseDate.exists
+    }
+    
+    var isDetailMetacriticDisplayed: Bool {
+        detailMetacritic.exists
+    }
+    
+    var isDetailDescriptionDisplayed: Bool {
+        detailDescription.exists
+    }
+}
+

@@ -28,6 +28,8 @@ class HomeViewController: UIViewController, LoadingShowable {
         homeViewModel.viewDidLoad()
        
         NotificationCenter.default.addObserver(self, selector: #selector(handleImageTapped(notification:)), name: Notification.Name("ImageTapped"), object: nil)
+        
+        setAccessiblityIdentifiers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -206,5 +208,12 @@ extension HomeViewController: HomeViewModelDelegate {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+    }
+}
+
+extension HomeViewController {
+    func setAccessiblityIdentifiers() {
+        collectionView.accessibilityIdentifier = "collectionView"
+        searchBar.accessibilityIdentifier = "searchBar"
     }
 }

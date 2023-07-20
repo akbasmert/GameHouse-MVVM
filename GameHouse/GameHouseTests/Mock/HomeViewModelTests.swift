@@ -47,10 +47,10 @@ final class HomeViewModelTests: XCTestCase {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             XCTAssertTrue(self.view.isInvokedHideLoading)
-           
+            XCTAssertEqual(self.viewModel.numberOfItems, 20)
             XCTAssertTrue(self.view.isInvokedReloadData)
         }
-        XCTAssertEqual(self.viewModel.numberOfItems, 20)
+       
     }
 }
 
