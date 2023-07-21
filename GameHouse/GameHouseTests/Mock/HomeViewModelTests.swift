@@ -37,7 +37,7 @@ final class HomeViewModelTests: XCTestCase {
         XCTAssertTrue(view.isInvokedSetupSearchBar)
     }
 
-    func test_fetchAudiosOutput() {
+    func test_fetchGames() {
         XCTAssertFalse(view.isInvokedHideLoading)
         XCTAssertFalse(view.isInvokedReloadData)
 

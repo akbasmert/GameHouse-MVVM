@@ -12,7 +12,6 @@
 		41851CDA2A67C17A009B17DF /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 41851CD92A67C17A009B17DF /* SDWebImage */; };
 		41B8F8B42A605C4C000BF7E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F8B32A605C4C000BF7E6 /* AppDelegate.swift */; };
 		41B8F8B62A605C4C000BF7E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F8B52A605C4C000BF7E6 /* SceneDelegate.swift */; };
-		41B8F8B82A605C4C000BF7E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F8B72A605C4C000BF7E6 /* ViewController.swift */; };
 		41B8F8BB2A605C4C000BF7E6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41B8F8B92A605C4C000BF7E6 /* Main.storyboard */; };
 		41B8F8BE2A605C4C000BF7E6 /* GameHouse.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F8BC2A605C4C000BF7E6 /* GameHouse.xcdatamodeld */; };
 		41B8F8C02A605C4D000BF7E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 41B8F8BF2A605C4D000BF7E6 /* Assets.xcassets */; };
@@ -70,7 +69,6 @@
 		41B8F8B02A605C4C000BF7E6 /* GameHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41B8F8B32A605C4C000BF7E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		41B8F8B52A605C4C000BF7E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		41B8F8B72A605C4C000BF7E6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		41B8F8BA2A605C4C000BF7E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		41B8F8BD2A605C4C000BF7E6 /* GameHouse.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GameHouse.xcdatamodel; sourceTree = "<group>"; };
 		41B8F8BF2A605C4D000BF7E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				41B8F8EC2A605DD1000BF7E6 /* Utils */,
 				41B8F8EB2A605DC3000BF7E6 /* ViewModel */,
 				41B8F8ED2A605DDE000BF7E6 /* Scenes */,
-				41B8F8B72A605C4C000BF7E6 /* ViewController.swift */,
 				41B8F8B92A605C4C000BF7E6 /* Main.storyboard */,
 				41B8F8BF2A605C4D000BF7E6 /* Assets.xcassets */,
 				41B8F8C12A605C4D000BF7E6 /* LaunchScreen.storyboard */,
@@ -511,7 +508,6 @@
 				41D9CBE22A65197000B225DE /* NoDataCollectionViewCell.swift in Sources */,
 				41D9CBDE2A64631000B225DE /* FavoriteTableViewCell.swift in Sources */,
 				41B8F8F92A605EC2000BF7E6 /* HomeViewModel.swift in Sources */,
-				41B8F8B82A605C4C000BF7E6 /* ViewController.swift in Sources */,
 				41B8F8B42A605C4C000BF7E6 /* AppDelegate.swift in Sources */,
 				41B8F90F2A6123DF000BF7E6 /* HomeCollectionViewCell.swift in Sources */,
 				41B8F9032A605F35000BF7E6 /* LoadingView.swift in Sources */,
