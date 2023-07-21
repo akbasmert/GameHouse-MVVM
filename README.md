@@ -21,7 +21,7 @@
 
 
 ## Demo
-<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/gif.gif" width="800" height="500" />
+<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/gif.gif" width="800" height="550" />
 Note: Above is a gif promoting the app. Downloading late due to file size.
 
 #### Home Page 
