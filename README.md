@@ -21,17 +21,17 @@
 
 
 ## Demo
-<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/gif.gif" width="800" height="450" />
+<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/gif.gif" width="800" height="500" />
 Note: Above is a gif promoting the app. Downloading late due to file size.
 
 #### Home Page 
 
-<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/home.png" width="800" height="600" />
+<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/home.png" width="800" height="550" />
 
 #### Detail Page 
 
-<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/detail.png" width="800" height="600" />
+<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/detail.png" width="800" height="550" />
 
 #### Favori Page 
 
-<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/favori.png" width="800" height="600" />
+<img src="https://github.com/akbasmert/GameHouse-MVVM/blob/main/ReadmePhotos/favori.png" width="800" height="550" />
