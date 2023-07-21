@@ -35,6 +35,8 @@
 		41B8F9172A613B5A000BF7E6 /* PageViewCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41B8F9152A613B5A000BF7E6 /* PageViewCollectionViewCell.xib */; };
 		41B8F91B2A6268B0000BF7E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F91A2A6268B0000BF7E6 /* DetailViewController.swift */; };
 		41B8F91D2A626A82000BF7E6 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B8F91C2A626A82000BF7E6 /* DetailViewModel.swift */; };
+		41C061662A6A9F1000024B6A /* MockFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C061652A6A9F1000024B6A /* MockFavoriteViewController.swift */; };
+		41C061692A6AA0B100024B6A /* FavoriViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C061682A6AA0B100024B6A /* FavoriViewModelTests.swift */; };
 		41D9CBD72A63E32000B225DE /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBD62A63E32000B225DE /* FavoriteViewController.swift */; };
 		41D9CBDA2A63E34100B225DE /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBD92A63E34100B225DE /* FavoriteViewModel.swift */; };
 		41D9CBDE2A64631000B225DE /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41D9CBDC2A64631000B225DE /* FavoriteTableViewCell.swift */; };
@@ -94,6 +96,8 @@
 		41B8F9152A613B5A000BF7E6 /* PageViewCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewCollectionViewCell.xib; sourceTree = "<group>"; };
 		41B8F91A2A6268B0000BF7E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		41B8F91C2A626A82000BF7E6 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		41C061652A6A9F1000024B6A /* MockFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoriteViewController.swift; sourceTree = "<group>"; };
+		41C061682A6AA0B100024B6A /* FavoriViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriViewModelTests.swift; sourceTree = "<group>"; };
 		41D9CBD62A63E32000B225DE /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 		41D9CBD92A63E34100B225DE /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		41D9CBDC2A64631000B225DE /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
@@ -316,6 +320,25 @@
 			path = DetailViewModel;
 			sourceTree = "<group>";
 		};
+		41C0616A2A6AA4A900024B6A /* HomeScenesTests */ = {
+			isa = PBXGroup;
+			children = (
+				41D9CBE52A66657400B225DE /* Games.json */,
+				41D9CBE72A666FA200B225DE /* MockHomeViewController.swift */,
+				41D9CBE92A6674DA00B225DE /* HomeViewModelTests.swift */,
+			);
+			path = HomeScenesTests;
+			sourceTree = "<group>";
+		};
+		41C0616B2A6AA50700024B6A /* FavoriScenesTests */ = {
+			isa = PBXGroup;
+			children = (
+				41C061652A6A9F1000024B6A /* MockFavoriteViewController.swift */,
+				41C061682A6AA0B100024B6A /* FavoriViewModelTests.swift */,
+			);
+			path = FavoriScenesTests;
+			sourceTree = "<group>";
+		};
 		41D9CBD52A63E30B00B225DE /* FavoriteView */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,9 +370,8 @@
 		41D9CBE42A6664E100B225DE /* Mock */ = {
 			isa = PBXGroup;
 			children = (
-				41D9CBE52A66657400B225DE /* Games.json */,
-				41D9CBE72A666FA200B225DE /* MockHomeViewController.swift */,
-				41D9CBE92A6674DA00B225DE /* HomeViewModelTests.swift */,
+				41C0616B2A6AA50700024B6A /* FavoriScenesTests */,
+				41C0616A2A6AA4A900024B6A /* HomeScenesTests */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -528,9 +550,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				41C061662A6A9F1000024B6A /* MockFavoriteViewController.swift in Sources */,
 				41B8F8CE2A605C4D000BF7E6 /* GameHouseTests.swift in Sources */,
 				41D9CBE82A666FA200B225DE /* MockHomeViewController.swift in Sources */,
 				41D9CBEA2A6674DA00B225DE /* HomeViewModelTests.swift in Sources */,
+				41C061692A6AA0B100024B6A /* FavoriViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
