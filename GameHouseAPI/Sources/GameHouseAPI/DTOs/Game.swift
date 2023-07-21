@@ -17,7 +17,6 @@ public struct GameResult: Decodable {
     }
 }
 
-
 public struct Game: Decodable {
    public let id: Int?
    public let name, released: String?

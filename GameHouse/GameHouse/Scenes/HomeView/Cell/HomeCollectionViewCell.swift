@@ -38,19 +38,7 @@ class HomeCollectionViewCell: UICollectionViewCell {
             ratingReleasedLabel.text = ""
         }
     }
-    
-//    func setImage(game: Game) {
-//        ImageDownloader.shared.image(news: game) { [weak self] data, error in
-//            guard let self = self else { return }
-//            if let data = data {
-//                if let img = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self.imageView?.image = img
-//                    }
-//                }
-//            }
-//        }
-//    }
+
     func setImage(game: Game) {
         let fullPath = game.backgroundImage ?? ""
         

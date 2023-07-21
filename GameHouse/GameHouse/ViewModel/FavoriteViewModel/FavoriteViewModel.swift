@@ -17,10 +17,12 @@ protocol FavoriteViewModelProtocol {
     func saveFilteredGameVideos()
     func favoriteGame(_ index: Int) -> GameEntity?
     func getVideoId(index: Int) -> Int
+    func viewDidLoad()
 }
 
 protocol FavoriteViewModelDelegate: AnyObject {
     
+    func setupTableView()
     func showLoadingView()
     func hideLoadingView()
     func reloadData()
@@ -45,6 +47,10 @@ extension FavoriteViewModel: FavoriteViewModelProtocol {
   
     var numberOfItems: Int {
         return gameList.count
+    }
+    
+    func viewDidLoad() {
+        delegate?.setupTableView()
     }
     
     func getVideoId(index: Int) -> Int {

@@ -71,26 +71,6 @@ final class DetailViewModel {
 
 extension DetailViewModel: DetailViewModelProtocol {
 
-    func isSavedGameId(gameId: Int) -> Bool {
-        let audioData = CoreDataManager.shared.fetchAudioData()
-        return audioData.contains { $0.id == gameId }
-    }
-
-    func checkGameData(gameId: Int) {
-        let gameEntities = CoreDataManager.shared.fetchAudioData()
-        let existingGameEntity = gameEntities.first { $0.id == Int64(gameId) }
-        if let existingGameEntity = existingGameEntity {
-            CoreDataManager.shared.deleteAudioData(withID: Int(existingGameEntity.id))
-        } else {
-            guard let game =  detailGame else { return  }
-            CoreDataManager.shared.saveAudioData(game)
-        }
-    }
-
-    func fetchData(id: Int) {
-        fetchDetailGame(id: id)
-    }
-    
     var getTitle: String {
         detailGame?.name ?? "No Title"
     }
@@ -112,5 +92,25 @@ extension DetailViewModel: DetailViewModelProtocol {
               return nil
           }
         return SDImageCache.shared.imageFromDiskCache(forKey: imageURL)
+    }
+    
+    func isSavedGameId(gameId: Int) -> Bool {
+        let audioData = CoreDataManager.shared.fetchAudioData()
+        return audioData.contains { $0.id == gameId }
+    }
+
+    func checkGameData(gameId: Int) {
+        let gameEntities = CoreDataManager.shared.fetchAudioData()
+        let existingGameEntity = gameEntities.first { $0.id == Int64(gameId) }
+        if let existingGameEntity = existingGameEntity {
+            CoreDataManager.shared.deleteAudioData(withID: Int(existingGameEntity.id))
+        } else {
+            guard let game =  detailGame else { return  }
+            CoreDataManager.shared.saveAudioData(game)
+        }
+    }
+
+    func fetchData(id: Int) {
+        fetchDetailGame(id: id)
     }
 }

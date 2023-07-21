@@ -8,6 +8,7 @@
 import Foundation
 
 public struct GameResponse: Decodable {
+    
     public let results: [Game]
     
     private enum RootCodingKeys: String, CodingKey {

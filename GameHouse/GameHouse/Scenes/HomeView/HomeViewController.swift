@@ -42,7 +42,6 @@ class HomeViewController: UIViewController, LoadingShowable {
             performSegue(withIdentifier: "toSplashScreen", sender: nil)
             isOnSplahView = false
         }
-       
     }
     
     @objc private func handleImageTapped(notification: Notification) {
@@ -51,7 +50,6 @@ class HomeViewController: UIViewController, LoadingShowable {
         detailGameId = homeViewModel.getGameDetailID(index: index)
         performSegue(withIdentifier: "toDetailVC", sender: nil)
     }
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetailVC" {
@@ -130,6 +128,10 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
                 performSegue(withIdentifier: "toDetailVC", sender: nil)
             }
         }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        view.endEditing(true)
     }
 }
 

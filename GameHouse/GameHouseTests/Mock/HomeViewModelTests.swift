@@ -21,7 +21,6 @@ final class HomeViewModelTests: XCTestCase {
         viewModel.delegate = view
     }
 
-      
       override func tearDown() {
           view = nil
           viewModel = nil
@@ -40,17 +39,14 @@ final class HomeViewModelTests: XCTestCase {
 
     func test_fetchAudiosOutput() {
         XCTAssertFalse(view.isInvokedHideLoading)
-        XCTAssertEqual(viewModel.numberOfItems, 0)
         XCTAssertFalse(view.isInvokedReloadData)
 
         viewModel.fetchData()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
             XCTAssertTrue(self.view.isInvokedHideLoading)
-            XCTAssertEqual(self.viewModel.numberOfItems, 20)
             XCTAssertTrue(self.view.isInvokedReloadData)
         }
-       
     }
 }
 

@@ -24,7 +24,6 @@ class FavoriteTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     
@@ -45,19 +44,6 @@ class FavoriteTableViewCell: UITableViewCell {
         ratingLabel.text = "\(game.rating) - \(released)"
     }
 
-    
-//    func setImage(game: Game) {
-//        ImageDownloader.shared.image(news: game) { [weak self] data, error in
-//            guard let self = self else { return }
-//            if let data = data {
-//                if let img = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self.imageView?.image = img
-//                    }
-//                }
-//            }
-//        }
-//    }
     func setImage(game: GameEntity) {
         let fullPath = game.backgroundImage ?? ""
         
