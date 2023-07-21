@@ -81,7 +81,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="235.66666666666666"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eQB-3T-LSv">
-                                                        <rect key="frame" x="12" y="12" width="369" height="223.66666666666669"/>
+                                                        <rect key="frame" x="12" y="12" width="369" height="223.66666666666666"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                 <integer key="value" value="12"/>
@@ -250,7 +250,7 @@ hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Sw
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MGX-3i-3fw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231.2977099236641" y="-311.26760563380282"/>
+            <point key="canvasLocation" x="2231" y="-382"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="WpH-lO-zDJ">
@@ -277,7 +277,7 @@ hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Sw
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YW8-nX-vm6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="1073"/>
+            <point key="canvasLocation" x="1305" y="1090"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nZD-th-JA9">
@@ -315,7 +315,7 @@ hatatatataakeyNotFound(RootCodingKeys(stringValue: "results", intValue: nil), Sw
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I0L-1M-7y6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1304.5801526717557" y="-311.26760563380282"/>
+            <point key="canvasLocation" x="1305" y="-381"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
