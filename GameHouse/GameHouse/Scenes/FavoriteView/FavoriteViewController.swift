@@ -11,7 +11,7 @@ class FavoriteViewController: UIViewController, LoadingShowable {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var index: Int?
+    private var index: Int?
     var favoriteViewModel: FavoriteViewModelProtocol! {
         didSet {
             favoriteViewModel.delegate = self

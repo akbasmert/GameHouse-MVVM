@@ -12,9 +12,9 @@ class HomeViewController: UIViewController, LoadingShowable {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var isOnSplahView: Bool = true
-    var isFilteredList: Bool = false
-    var detailGameId: Int?
+    private var isOnSplahView: Bool = true
+    private var isFilteredList: Bool = false
+    private var detailGameId: Int?
     var homeViewModel: HomeViewModelProtocol! {
         didSet {
             homeViewModel.delegate = self

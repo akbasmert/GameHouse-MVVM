@@ -16,7 +16,7 @@ class DetailViewController: UIViewController, LoadingShowable {
     @IBOutlet weak var detailDescription: UILabel!
     
     var gameDetailID: Int?
-    var isFavorite: Bool = false
+    private var isFavorite: Bool = false
     var detailViewModel: DetailViewModelProtocol! {
         didSet {
             detailViewModel.delegate = self
